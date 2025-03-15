@@ -5,12 +5,12 @@ import 'controllers/theme_controller.dart';
 import 'theme.dart';
 
 void main() {
-  Get.put(ThemeController());
+  final themeController= Get.put(ThemeController());
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      themeMode: Get.find<ThemeController>().theme, // Utiliser le ThemeController pour gérer le mode
+      themeMode: themeController.theme, // Utiliser le ThemeController pour gérer le mode
       theme: lightTheme, // Light mode
       darkTheme: darkTheme, // Dark mode
       home: LoginScreen(),
